@@ -1,6 +1,4 @@
-import de.bezier.data.sql.*;
 import de.bezier.data.sql.mapper.*;
-
 import de.bezier.data.sql.*;
 
 SQLite bibliotek_db;
@@ -28,4 +26,8 @@ void setup() {
  println( bibliotek_db.getString("Navn"));
   }
   }
+}
+
+void draw() {
+  
 }
