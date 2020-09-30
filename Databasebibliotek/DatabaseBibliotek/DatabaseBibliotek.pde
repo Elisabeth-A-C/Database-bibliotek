@@ -22,16 +22,17 @@ void setup() {
     if (bibliotek_db.connect()) {
       bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
   while (bibliotek_db.next()) {
-  println( bibliotek_db.getString("Name"));
+    println( bibliotek_db.getString("Name"));
   }  
-  bibliotek_db.query("SELECT * FROM Elever");
+  bibliotek_db.query("SELECT * FROM Brugere");
   while (bibliotek_db.next()){
-  println( bibliotek_db.getString("ElevID"));
- println( bibliotek_db.getString("Brugernavn"));
- println( bibliotek_db.getString("Password"));
- println( bibliotek_db.getString("Navn"));
+   println( bibliotek_db.getString("ID"));
+   println( bibliotek_db.getString("Brugernavn"));
+   println( bibliotek_db.getString("Password"));
+   println( bibliotek_db.getString("Navn"));
+     println( bibliotek_db.getString("Admin"));
+      }
+    }
   }
-  }
- }
 
   
