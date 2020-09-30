@@ -16,6 +16,7 @@ void setup() {
   rect(623, 520, 250, 40, 8);
   fill(205, 50);
   rect(10, 10, 1480, 880, 8);
+  
  bibliotek_db = new SQLite( this, "data/bibliotek.db" );  // open database file
 
     if (bibliotek_db.connect()) {
