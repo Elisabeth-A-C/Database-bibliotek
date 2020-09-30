@@ -24,13 +24,9 @@ void setup() {
   while (bibliotek_db.next()) {
     println( bibliotek_db.getString("Name"));
   }  
-  bibliotek_db.query("SELECT * FROM Brugere");
+  bibliotek_db.query("SELECT Password FROM Brugere WHERE Brugernavn='Ceci'" );
   while (bibliotek_db.next()){
-   println( bibliotek_db.getString("ID"));
-   println( bibliotek_db.getString("Brugernavn"));
    println( bibliotek_db.getString("Password"));
-   println( bibliotek_db.getString("Navn"));
-     println( bibliotek_db.getString("Admin"));
       }
     }
   }
