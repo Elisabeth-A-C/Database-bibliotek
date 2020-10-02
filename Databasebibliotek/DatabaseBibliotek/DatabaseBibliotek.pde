@@ -24,24 +24,24 @@ void setup() {
   rect(10, 10, 1480, 880, 8);
   rect(840, 345, 250, 40, 8);
   rect(840, 405, 250, 40, 8);
-  
+
   bibliotek_db = new SQLite( this, "data/bibliotek.db" );
 
   if (bibliotek_db.connect()) {
     bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
     while (bibliotek_db.next()) {
       println( bibliotek_db.getString("Name"));
-       if (bibliotek_db.connect()) {
-      bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
-  while (bibliotek_db.next()) {
-    println( bibliotek_db.getString("Name"));
-  }  
-  bibliotek_db.query("SELECT Password FROM Brugere WHERE Brugernavn='Ceci'" );
-  while (bibliotek_db.next()){
-   println( bibliotek_db.getString("Password"));
+      if (bibliotek_db.connect()) {
+        bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
+        while (bibliotek_db.next()) {
+          println( bibliotek_db.getString("Name"));
+        }  
+        bibliotek_db.query("SELECT Password FROM Brugere WHERE Brugernavn='Ceci'" );
+        while (bibliotek_db.next()) {
+          println( bibliotek_db.getString("Password"));
+        }
       }
     }
-    }  
   }
 }
 
@@ -56,10 +56,5 @@ void mouseClicked() {
     if (password.length() < 4 && (key >= 'A' && key <= 'Z')) {
       password = password + key;
     }
-  }
-  }
-
-
-  if (mousePressed && mouseButton == RIGHT) {
   }
 }
