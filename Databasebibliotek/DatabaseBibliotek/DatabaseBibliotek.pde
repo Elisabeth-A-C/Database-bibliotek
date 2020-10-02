@@ -3,6 +3,7 @@ import de.bezier.data.sql.*;
 boolean displayStartScreen = true;
 String username = "";
 String password = "";
+int screenNumber = 0;
 
 SQLite bibliotek_db;
 
@@ -10,6 +11,8 @@ void setup() {
   background(255);
   size(1500, 900);
   fill(0);
+  
+ if (screenNumber == 0) {
   textSize(65);
   text("LOG IN", 630, 300);
   textSize(50);
@@ -24,6 +27,12 @@ void setup() {
   rect(10, 10, 1480, 880, 8);
   rect(840, 345, 250, 40, 8);
   rect(840, 405, 250, 40, 8);
+ }
+ 
+ if (screenNumber == 1) {
+ }
+ 
+ 
 
   bibliotek_db = new SQLite( this, "data/bibliotek.db" );
 
