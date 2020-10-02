@@ -1,5 +1,7 @@
 import de.bezier.data.sql.mapper.*;
 import de.bezier.data.sql.*;
+import controlP5.*;
+ControlP5 cp5;
 boolean displayStartScreen = true;
 boolean overBox = false;
 boolean locked = false;
@@ -11,38 +13,59 @@ SQLite bibliotek_db;
 
 void setup() {
   size(1500, 900);
-
+  
+    PFont font = createFont("arial",30);
+  
+  cp5 = new ControlP5(this); 
+  
+  cp5.addTextfield("")
+     .setPosition(840, 345)
+     .setSize(250, 40)
+     .setFocus(true)
+     .setColor(color(0))
+     .setColorBackground(color(255,255,255))
+     .setFont(font);
+     
+     cp5.addTextfield(" ")
+     .setPosition(840, 405)
+     .setSize(250, 40)
+     .setFocus(true)
+     .setColor(color(0))
+     .setColorBackground(color(255,255,255))
+     .setFont(font); 
+     
   bibliotek_db = new SQLite( this, "data/bibliotek.db" );
 
-  if (bibliotek_db.connect()) {
-    bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
-    while (bibliotek_db.next()) {
-      println( bibliotek_db.getString("Name"));
-      if (bibliotek_db.connect()) {
-        bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
-        while (bibliotek_db.next()) {
-          println( bibliotek_db.getString("Name"));
-        }  
-        bibliotek_db.query("SELECT Navn FROM Brugere WHERE Brugernavn='Ceci'" );
-        while (bibliotek_db.next()) {
-          username = new String (bibliotek_db.getString("Navn"));
-          println(username);
-        }
-      }
-    }
-  }
+  //if (bibliotek_db.connect()) {
+  //  bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
+  //  while (bibliotek_db.next()) {
+  //    println( bibliotek_db.getString("Name"));
+  //    if (bibliotek_db.connect()) {
+  //      bibliotek_db.query("SELECT name as \"Name\" FROM SQLITE_MASTER where type=\"table\"");
+  //      while (bibliotek_db.next()) {
+  //        println( bibliotek_db.getString("Name"));
+  //      }  
+  //      bibliotek_db.query("SELECT Navn FROM Brugere WHERE Brugernavn='Ceci'" );
+  //      while (bibliotek_db.next()) {
+  //        username = new String (bibliotek_db.getString("Navn"));
+  //        println(username);
+  //      }
+  //    }
+  //  }
+  //}
 }
 
 void draw() {
 
   if (screenNumber == 0) {
+     
     background(255);
     fill(0);
     textSize(65);
     text("LOG IN", 630, 300);
     textSize(50);
-    text("BRUGERNAVN:  " + username, 450, 380);
-    text("PASSWORD:     " + password, 450, 440);
+    text("BRUGERNAVN:  ", 450, 380);
+    text("PASSWORD:     ", 450, 440);
     fill(125);
     rect(623, 510, 250, 40, 8);
     fill(255);
