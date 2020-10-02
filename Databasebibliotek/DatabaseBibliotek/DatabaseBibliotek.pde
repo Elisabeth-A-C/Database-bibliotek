@@ -23,9 +23,10 @@ void setup() {
         while (bibliotek_db.next()) {
           println( bibliotek_db.getString("Name"));
         }  
-        bibliotek_db.query("SELECT Password FROM Brugere WHERE Brugernavn='Ceci'" );
+        bibliotek_db.query("SELECT Navn FROM Brugere WHERE Brugernavn='Ceci'" );
         while (bibliotek_db.next()) {
-          println( bibliotek_db.getString("Password"));
+          username = new String (bibliotek_db.getString("Navn"));
+          println(username);
         }
       }
     }
@@ -53,7 +54,7 @@ void draw() {
     rect(840, 405, 250, 40, 8);
   }
   
-  if (screenNumber == 2) {
+  if (screenNumber == 1) {
   background(255);
    fill(205, 50);
    rect(10, 10, 1480, 880, 8);
@@ -78,7 +79,7 @@ void draw() {
    text("Forfatter ", 1070, 160);
   }
   
-  if (screenNumber == 1) {
+  if (screenNumber == 2) {
    background(255);
    fill(205, 50);
    rect(10, 10, 1480, 880, 8);
