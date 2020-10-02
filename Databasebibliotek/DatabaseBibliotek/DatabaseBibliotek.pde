@@ -53,9 +53,54 @@ void draw() {
     rect(840, 405, 250, 40, 8);
   }
   
-  if (screenNumber == 1) {
-  background(0);
+  if (screenNumber == 2) {
+  background(255);
+   fill(205, 50);
+   rect(10, 10, 1480, 880, 8);
+   fill(0);
+   line(width/2, 100, width/2, height); 
+   line(10, 100, width-10, 100);
+   line(10, 180, width-10, 180);
+   line(10, 260, width-10, 260);
+   line(10, 340, width-10, 340);
+   line(10, 420, width-10, 420);
+   line(10, 500, width-10, 500);
+   line(10, 580, width-10, 580);
+   line(10, 660, width-10, 660);
+   line(10, 740, width-10, 740);
+   line(10, 820, width-10, 820);
+   line(10, 900, width-10, 900);
+   textSize(30);
+   text("NAVN ", 20, 60);
+   textSize(30);
+   text("ID ", 1440, 60);
+   text("Titel ", 350, 160);
+   text("Forfatter ", 1070, 160);
+  }
   
+  if (screenNumber == 1) {
+   background(255);
+   fill(205, 50);
+   rect(10, 10, 1480, 880, 8);
+   fill(0);
+   line(width/2, 100, width/2, height); 
+   line(10, 100, width-10, 100);
+   line(10, 180, width-10, 180);
+   line(10, 260, width-10, 260);
+   line(10, 340, width-10, 340);
+   line(10, 420, width-10, 420);
+   line(10, 500, width-10, 500);
+   line(10, 580, width-10, 580);
+   line(10, 660, width-10, 660);
+   line(10, 740, width-10, 740);
+   line(10, 820, width-10, 820);
+   line(10, 900, width-10, 900);
+   textSize(30);
+   text("NAVN ", 20, 60);
+   textSize(30);
+   text("ID ", 1440, 60);
+   text("Elev ", 350, 160);
+   text("Hold ", 1070, 160);
   }
 
 
